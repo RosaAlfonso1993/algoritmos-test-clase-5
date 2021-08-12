@@ -1,6 +1,8 @@
 package com.redbee.clase5.ejercicios;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 /**
  * Crea una calculadora que sea capaz de recibir una operación matemática como input en un string y devuelva el
@@ -27,4 +29,38 @@ import org.junit.jupiter.api.DisplayName;
  */
 @DisplayName("Laboratorio para ejercicio de numeros romanos")
 public class CalculadoraDeStringsLab {
+
+    @Test
+    void resultadoConStringVacio(){
+        final var correctResult = 0;
+        final var result = Calculator.calcular("");
+        Assertions.assertEquals(correctResult, result);
+    }
+
+    @Test
+    void resultadoConNull(){
+        final var correctResult = 0;
+        final var result = Calculator.calcular(null);
+        Assertions.assertEquals(correctResult, result);
+    }
+    @Test
+    void resultadoConUnNumero(){
+        final var correctResult = 3;
+        final var result = Calculator.calcular("3");
+        Assertions.assertEquals(correctResult, result);
+    }
+
+    @Test
+    void resultadoConUnSuma(){
+        final var correctResult = 4;
+        final var result = Calculator.calcular("1+3");
+        Assertions.assertEquals(correctResult, result);
+    }
+
+    @Test
+    void resultadoConResta(){
+        final var correctResult = 1;
+        final var result = Calculator.calcular("6-5");
+        Assertions.assertEquals(correctResult, result);
+    }
 }

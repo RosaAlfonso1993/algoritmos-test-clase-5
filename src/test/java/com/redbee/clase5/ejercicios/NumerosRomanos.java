@@ -1,6 +1,8 @@
 package com.redbee.clase5.ejercicios;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 /**
  * Escribe una función que traduzca de números romanos a decimales romanToDecimal(roman). En aras de mantener el kata
@@ -25,4 +27,35 @@ import org.junit.jupiter.api.DisplayName;
  */
 @DisplayName("Laboratorio para ejercicio de numeros romanos")
 public class NumerosRomanos {
+
+    @Test
+    void devolverValorDeI(){
+        final var correctResult = 1;
+        final var result = RomanTranslator.romanToDecimal("I");
+
+        Assertions.assertEquals(correctResult, result);
+    }
+    @Test
+    void devolverValorDeXI(){
+        final var correctResult = 11;
+        final var result = RomanTranslator.romanToDecimal("XI");
+
+        Assertions.assertEquals(correctResult, result);
+    }
+
+    @Test
+    void devolverValorDeXXI(){
+        final var correctResult = 21;
+        final var result = RomanTranslator.romanToDecimal("XXI");
+
+        Assertions.assertEquals(correctResult, result);
+    }
+
+    @Test
+    void devolverValorDeMCMXLIV(){
+        final var correctResult = 1944;
+        final var result = RomanTranslator.romanToDecimal("MCMXLIV");
+
+        Assertions.assertEquals(correctResult, result);
+    }
 }
